@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { SortDirection } from "src/app/interfaces/sort-dir";
 import { Sort } from "src/app/interfaces/sort";
-import { SelectList } from "src/app/interfaces/select-list.inerface";
+import { SelectList } from "src/app/interfaces/select-list.interface";
 
 @Component({
   selector: "app-sort-tag",
