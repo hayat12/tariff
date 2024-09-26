@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectList } from 'src/app/interfaces/select-list.inerface';
+import { SelectList } from 'src/app/interfaces/select-list.interface';
 import { Sort } from 'src/app/interfaces/sort';
 import { Tariff } from 'src/app/interfaces/tariff.interface';
 import { TariffService } from 'src/app/services/tariff.service';
@@ -34,6 +34,7 @@ export class TariffListingComponent implements OnInit {
 
   loadTariffs() {
     this.tariffService.getTariff().subscribe((tariffs) => {
+      console.log(tariffs);
       this.tariffs = tariffs;
     });
   }
