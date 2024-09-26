@@ -1,5 +1,5 @@
 <div class="container">
-    <app-sort-tag style="float: right;" [items]="filterOptions" (sortChange)="onSort($event)" />
+    <app-sort-tag [items]="filterOptions" (sortChange)="onSort($event)" />
     <br />
     <app-tariff-listing-filtered [tariffs]="(tariffs$ | async)" [sort]="sort"/>
 </div>

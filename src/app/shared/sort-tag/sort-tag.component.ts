@@ -8,7 +8,8 @@ import { SelectList } from "src/app/interfaces/select-list.interface";
   selector: "app-sort-tag",
   standalone: true,
   imports: [CommonModule],
-  template: `<select
+  template: `<div class="sort-box">
+    <select
     (change)="sort($event)"
     name="sort"
     class="sort-tag"
@@ -17,14 +18,9 @@ import { SelectList } from "src/app/interfaces/select-list.interface";
     <option *ngFor="let option of items" [value]="option.value">
       {{ option.text }}
     </option>
-  </select>`,
-  styles: [
-    `
-    .sort-tag
-      padding: 8px 16px
-      width: auto
-    `,
-  ],
+  </select>
+  </div>`,
+  styleUrls: ['./sort-tag.component.sass'],
 })
 export class SortTagComponent {
   @Input({ required: true }) items: SelectList[] = [];
