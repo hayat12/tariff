@@ -1,0 +1,113 @@
+// Variables
+$border-color: #000
+$background-color: #fff
+$hover-bg-color: #444
+$font-family: Arial, sans-serif
+$highlight-bg-color: #eee
+$sort-tag-color: red
+
+$window-breakpoint: 1024px
+$tablet-breakpoint: 768px
+$font-size-mobile: 14px
+$font-size-tablet: 20px
+$font-size-window: 18px
+$price-font-size: 24px
+$button-font-size: 16px
+$border-radius: 8px
+$padding: 16px
+$button-padding: 10px 20px
+$gap: 10px
+
+@mixin border-radius($radius)
+  border-radius: $radius
+
+@mixin button-styles
+  padding: $button-padding
+  background-color: $border-color
+  color: $background-color
+  border: none
+  cursor: pointer
+  font-size: $button-font-size
+  @include border-radius(5px)
+  transition: background-color 0.3s ease
+  &:hover
+    background-color: $hover-bg-color
+
+@mixin speed-info-styles
+  display: flex
+  align-items: center
+  gap: $gap
+  .sort-tag
+    color: $sort-tag-color
+  .speed
+    font-weight: bold
+
+.tariff-card
+  border: 1px solid $border-color
+  margin: 2px
+  @include border-radius($border-radius)
+  padding: $padding
+
+  .tariff-header
+    flex-basis: 100%
+    .tariff-name
+      font-weight: bold
+
+  .tariff-info
+    display: flex
+    flex-basis: 100%
+    justify-content: space-between
+    padding: 10px 0
+
+    .speed-info
+      display: flex
+      flex-direction: column
+      gap: $gap
+
+      .download-speed,
+      .upload-speed
+        @include speed-info-styles
+
+  .tariff-footer
+    display: flex
+    align-items: center
+    gap: 20px
+
+    .price
+      font-size: $price-font-size
+      font-weight: bold
+
+    .sort-tag
+      color: $sort-tag-color
+
+    .tariff-button
+      @include button-styles
+
+
+@media (min-width: $window-breakpoint)
+  .tariff-card
+    .tariff-header .tariff-name
+      font-size: $font-size-window
+
+@media (min-width: $tablet-breakpoint) and (max-width: $window-breakpoint)
+  .tariff-card
+    padding: 28px,
+    .tariff-info
+      justify-content: space-around
+    .tariff-header .tariff-name
+      font-size: $font-size-tablet
+
+@media (max-width: $tablet-breakpoint)
+  .tariff-card
+    padding: 8px
+    .tariff-info
+      flex-direction: column
+      gap: 20px
+      .tariff-footer
+        justify-content: space-between
+        padding: $padding
+      .speed-info
+        display: block
+        gap: 5px
+    .tariff-footer .price
+      font-size: $font-size-mobile

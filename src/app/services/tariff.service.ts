@@ -11,7 +11,8 @@ export class TariffService {
   getTariff():Observable<Tariff[]>{
     return of(mockData);
   }
-  getTariffById(id:number):Observable<Tariff | unknown >{
-    return of((mockData.find((f) => f.id == id) ?? null));
+  getTariffById(id:number):Observable<Tariff | undefined >{
+    const tariff:Tariff|undefined = mockData.find((f) => f.id == id) ?? undefined;
+    return of(tariff);
   }
 }
