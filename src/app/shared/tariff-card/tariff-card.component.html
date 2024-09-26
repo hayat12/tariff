@@ -1,0 +1,21 @@
+<div class="tariff-card">
+  <div class="tariff-header">
+      <span class="tariff-name">{{tariff.name}}</span>
+  </div>
+  <div class="tariff-info">
+      <div class="speed-info">
+          <div class="download-speed">
+              <span>Download</span>
+              <span class="speed">{{tariff.download}} Mbit/s</span> <span class="sort-tag" *ngIf="sort.key=='download'">&uarr;</span>
+          </div>
+          <div class="upload-speed">
+              <span>Upload</span>
+              <span class="speed">{{tariff.upload}} Mbit/s</span><span class="sort-tag" *ngIf="sort.key=='upload'">&uarr;</span>
+          </div>
+      </div>
+      <div class="tariff-footer">
+        <span class="price">{{tariff.price}} €</span> <span class="sort-tag" *ngIf="sort.key=='price'">&uarr;</span><br><br>
+        <button (click)="toDetails(tariff.id)" class="tariff-button"> View </button>
+      </div>
+    </div>
+</div>

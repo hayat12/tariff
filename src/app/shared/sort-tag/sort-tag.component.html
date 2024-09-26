@@ -1,0 +1,13 @@
+<select (change)="sort($event)" name="sort" class="sort-tag" id="sort">
+  <option *ngFor="let option of items" [value]="option.value">
+    {{ option.text }}
+  </option>
+</select>
+<!--
+<label>
+  <span [ngSwitch]="sortDirection">
+    <ng-container *ngSwitchCase="'ASC'">&darr;</ng-container>
+    <ng-container *ngSwitchCase="'DESC'">&uarr;</ng-container>
+    <ng-container *ngSwitchDefault>&uarr;</ng-container>
+  </span>
+</label> -->

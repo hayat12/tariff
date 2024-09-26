@@ -1,1 +1,6 @@
-<p>tariff-listing works!</p>
+<div class="container">
+    <app-sort-tag style="float: right;" [items]="filterOptions" (sortChange)="onSort($event)" />
+    <br />
+    <app-tariff-listing-filtered [tariffs]="tariffs" [sort]="sort"/>
+  </div>
+  
