@@ -6,3 +6,12 @@ jobs:
   super-lint
     name: Lint code base
     runs-on: ubuntu-latest
+staps:
+  - name: CheckOut code
+  - uses: actions/checkout@v2
+
+  name: Run Super-Lanter
+  uses: github/super-linter@v3
+  env:
+    DEFAULT_BRANCH: man
+    GITHUB_TOKEN: ${{secret.GITHUB_TOKEN}}
